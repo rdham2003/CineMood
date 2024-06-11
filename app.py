@@ -58,7 +58,7 @@ def getBestMovies(movieList, genreList):
     print(genreDict)
     
     sortedGenreDict = dict(sorted(genreDict.items(), key=lambda item: item[1], reverse=True))
-    top3Genres = list(sortedGenreDict.keys())[:3]
+    top3Genres = list(sortedGenreDict.keys())[:4]
     print(sortedGenreDict)
     print(top3Genres)
     
@@ -86,9 +86,9 @@ def getBestMovies(movieList, genreList):
     return moviesToRecommend
 
 
-city = 'Los Angeles'
+city = 'Barcelona'
 state = None  # State code 
-country = 'US'  # Country code 
+country = 'Spain'  # Country code 
 weatherAPI = '3f465ec287cfeb5fa02a21445f57f65b'
 
 weather_data = get_weather_by_city_state_country(city, country, weatherAPI)
