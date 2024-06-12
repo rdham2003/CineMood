@@ -86,9 +86,9 @@ def getBestMovies(movieList, genreList):
     return moviesToRecommend
 
 
-city = 'Barcelona'
+city = 'Eagan'
 state = None  # State code 
-country = 'Spain'  # Country code 
+country = 'US'  # Country code 
 weatherAPI = '3f465ec287cfeb5fa02a21445f57f65b'
 
 weather_data = get_weather_by_city_state_country(city, country, weatherAPI)

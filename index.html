@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation App</title>
+    <link rel="stylesheet" href="static/main.css">
+</head>
+<body>
+    <header id="head_container">
+        <h1>Movie Recommendation App</h1>
+        <h3>Recommends a movie based on your current time and weather</h3>
+    </header>
+    <br>
+    <br>
+    <form action="/predict" method="POST">
+        <div id="form_container">
+            <h2>Enter your current location:</h2>
+            <br>
+            <label for="">City: </label>
+            <input type="text" id="cityBox" name="cityBox" required>
+            <br>
+            <br>
+            <label id="stateBox" name="stateBox">State (optional): </label>
+            <input type="text" >
+            <br>
+            <br>
+            <label for="">Country: </label>
+            <input type="text" id="countryBox" name="countryBox"required>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button id="submit">Get Movie Recommendation!</button>
+        </div>
+    </form>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "FiraSans";
+    src: url(fonts/FiraSansCondensed-Black.ttf);
+}
+
+body {
+    background-image: url(movie.jpg);
+    font-family: "FiraSans";
+    margin: 0
+}
+#head_container{
+    font-family: "FiraSans";
+    background-color: rgb(187, 17, 187);
+    text-align: center;
+    padding: 1vw;
+    color: white
+}
+
+#form_container {
+    border: 2px black solid;
+    border-radius: 2em;
+    height: 25em;
+    width: 20em;
+    margin: auto;
+    padding-top: 2em;
+    background: linear-gradient(180deg, rgb(216, 15, 216), rgb(64, 64, 245));
+    text-align: center;
+}
+
+#submit {
+    border: 0;
+    border-radius: 1em;
+    font-family: "FiraSans";
+    height: 3em;
+    width: 20em;
+    background-color: rgb(187, 17, 187);
+    font-size: 15px;
+}
