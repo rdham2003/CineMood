@@ -7,8 +7,11 @@ import os
 import itertools
 import datetime
 import random
+from flask import Flask, request, render_template
 
 os.system('cls')
+
+app = Flask(__name__)
 
 weatherMovieModel = pickle.load(open('model.pkl', 'rb'))
 warnings.filterwarnings(action='ignore', category=UserWarning, message="X does not have valid feature names")

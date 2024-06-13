@@ -6,7 +6,7 @@
 body {
     background-image: url(movie.jpg);
     font-family: "FiraSans";
-    margin: 0
+    margin: 0;
 }
 #head_container{
     font-family: "FiraSans";
@@ -35,4 +35,44 @@ body {
     width: 20em;
     background-color: rgb(187, 17, 187);
     font-size: 15px;
+}
+
+#foot_container {
+        font-family: "FiraSans";
+        background-color: rgb(187, 17, 187);
+        text-align: center;
+        padding: 1vw;
+        color: white;
+}
+
+#weatherCard{
+    border: 2px solid;
+    width: 300px;
+    padding: 20px;
+    padding-top: 10px;
+    text-align: center;
+    background: linear-gradient(180deg, rgb(63, 162, 255),rgb(255, 174, 0));
+    margin: auto;
+    border-radius: 10px;
+    display: none;
+}
+
+#loader {
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    animation: spin 2s linear infinite;
+  }
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.load{
+    visibility: hidden;
+    margin: auto;
+    text-align: center;
 }

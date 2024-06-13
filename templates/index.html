@@ -13,7 +13,7 @@
     </header>
     <br>
     <br>
-    <form action="/predict" method="POST">
+    <form id="getWeather" action="/recommend" method="POST">
         <div id="form_container">
             <h2>Enter your current location:</h2>
             <br>
@@ -32,8 +32,13 @@
             <br>
             <br>
             <button id="submit">Get Movie Recommendation!</button>
+            <br>
+            <br>
+            <h3 class="load">Choosing a movie</h3>
+            <div id="loader" class="load"></div>
         </div>
     </form>
-    <footer></footer>
+    <script src="static\js\weather.js"></script>
+    <script src="static\js\loading.js"></script>
 </body>
 </html>

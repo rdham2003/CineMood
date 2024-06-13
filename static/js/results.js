@@ -1,38 +1,14 @@
-const weatherForm = document.querySelector(".getWeather");
-const cityInput = document.querySelector(".weatherData");
-const card = document.querySelector(".weatherCard");
-const API = "3f465ec287cfeb5fa02a21445f57f65b";
+const card = document.getElementById("weatherCard")
 
-weatherForm.addEventListener("submit", async event => {
-
-    event.preventDefault();
-    
-    const city = cityInput.value;
-
-    if(city){
-        try{
-            const weatherData = await getWeather(city);
-            weatherInfo(weatherData);
-        }
-        catch(error){
-            console.error(error);
-            displayError(error);
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    const weatherData = JSON.parse(localStorage.getItem('weatherData'));
+    if (weatherData){
+        weatherInfo(weatherData)
     }
     else{
-        displayError("Please enter a city");
+        document.getElementById("weatherCard").textContent = "No weather data found";
     }
-});
-
-async function getWeather(city){
-    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}`;
-    const response = await fetch(apiURL);
-    // console.log(response);
-    if (!response.ok){
-        throw new Error("Could not fetch weather data")
-    }
-    return await response.json();
-}
+})
 
 function weatherInfo(data){
     console.log(data);
@@ -113,12 +89,5 @@ function weatherInfo(data){
         cityWdir.textContent = `Wind Direction: Northwest`;
     }
     console.log(windDirection);
-    document.querySelector(".weatherCard").style.display = "block";
-    document.querySelector(".error").style.display = "none";
-}
-
-
-function displayError(message){
-    document.querySelector(".error").style.display = "block";
-    document.querySelector(".weatherCard").style.display = "none";
+    card.style.display = "block";
 }
