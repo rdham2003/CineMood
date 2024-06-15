@@ -10,6 +10,7 @@ import random
 import time
 from flask import Flask, request, render_template
 
+movieCount = 20
 
 # os.system('cls')
 
@@ -77,27 +78,27 @@ def getBestMovies(movieList, genreList):
     
     moviesToRecommend = []
     
-    while (len(moviesToRecommend) < 5):
+    while (len(moviesToRecommend) < movieCount/2):
         for genre in genreTopSets:
             for movie in movieList:
                 if (genre in movie[3]) and (movie not in moviesToRecommend):
                     moviesToRecommend.append(movie)
-                if len(moviesToRecommend) == 5:
+                if len(moviesToRecommend) == movieCount/2:
                     break
-            if len(moviesToRecommend) == 5:
+            if len(moviesToRecommend) == movieCount/2:
                     break
-        if len(moviesToRecommend) == 5:
+        if len(moviesToRecommend) == movieCount/2:
                     break   
-    while (len(moviesToRecommend) < 10):
+    while (len(moviesToRecommend) < movieCount):
         for genre in genreBottomSets:
             for movie in movieList:
                 if (genre in movie[3]) and (movie not in moviesToRecommend):
                     moviesToRecommend.append(movie)
-                if len(moviesToRecommend) == 10:
+                if len(moviesToRecommend) == movieCount:
                     break
-            if len(moviesToRecommend) == 10:
+            if len(moviesToRecommend) == movieCount:
                     break
-        if len(moviesToRecommend) == 10:
+        if len(moviesToRecommend) == movieCount:
                     break     
                   
     print(moviesToRecommend)
@@ -188,6 +189,9 @@ def recommendMovie():
         print(f'You live in {city}, {country}, where the current weather is {weather_data["weather"][0]["description"]} and the current time is {dateTime.strftime("%I:%M %p")}. Based on these conditions, I recommend you {modelOutput[randomMovie][1]}. {modelOutput[randomMovie][1]} is a {modelOutput[randomMovie][3]} genre movie and has a {modelOutput[randomMovie][2]} rating.')
         return render_template("recommend.html", data=dataList);   
            
+@app.route('/return', methods = ["POST"])
+def goBack():
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

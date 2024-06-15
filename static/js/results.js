@@ -136,3 +136,7 @@ function movieInfo(data){
     // moviePoster.src = "{{ url_for('static', filename='moviePosters/') }}" + movieData[7];
     console.log(moviePoster.src);
 }
+
+function refresh(){
+    location.reload();
+}

@@ -22,6 +22,7 @@
         <img id="moviePoster" src="{{ url_for('static', filename='moviePosters/' + data[7]) }}" height="200px" alt="Movie Poster">
         <h2 id="currentWeather">Rain</h2>
         <h3 id="currentTime">4:32 PM</h3>
+        <button id="return" onclick="refresh()">Click for a different movie recommendation</button>
     </div>
     <br>
     <br>
@@ -35,6 +36,9 @@
         <h3 class="humidity">Humidity: 76%</h3>
         <h3 class="windSpeed">Wind Speed: 12mph </h3>
         <h3 class="windDirection">Wind Direction: South</h3>
+        <form action="/return" method="POST">
+            <button id="return">Try a different place</button>
+        </form>
     </div>
     <script type="text/javascript">
         var movieData = {{ data|tojson }};

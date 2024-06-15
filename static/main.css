@@ -92,5 +92,15 @@ body {
     display: inline-flex;
     width: 100%;
     margin: auto;
+}
 
+
+#return {
+    border: 0;
+    border-radius: 1em;
+    font-family: "FiraSans";
+    height: 3em;
+    width: 15em;
+    background-color: rgb(187, 17, 187);
+    font-size: 15px;
 }
