@@ -1,13 +1,15 @@
-const card = document.getElementById("weatherCard")
+const card = document.getElementById("weatherCard");
+const movieCard = document.getElementById("movie_container");
 
 document.addEventListener('DOMContentLoaded', function() {
     const weatherData = JSON.parse(localStorage.getItem('weatherData'));
     if (weatherData){
-        weatherInfo(weatherData)
+        weatherInfo(weatherData);
     }
     else{
         document.getElementById("weatherCard").textContent = "No weather data found";
     }
+    movieInfo(weatherData);
 })
 
 function weatherInfo(data){
@@ -32,7 +34,7 @@ function weatherInfo(data){
     const cityHumidity = document.querySelector(".humidity");
     const cityWSpeed = document.querySelector(".windSpeed");
     const cityWdir = document.querySelector(".windDirection");
-    cityName.textContent = `${name}, ${country}`;
+    cityName.textContent = `Current Weather at: ${name}, ${country}`;
     cityTemp.textContent = `${Math.round(((temp - 273.15) * (9/5) + 32))}° F`;
     cityWeather.textContent = weather;
     if (weatherID >= 200 && weatherID < 300) {
@@ -90,4 +92,47 @@ function weatherInfo(data){
     }
     console.log(windDirection);
     card.style.display = "block";
+}
+
+function movieInfo(data){
+    const weatherID = data.weather[0].id;
+    const movieTitle = document.getElementById("movieTitle");
+    const rating = document.getElementById("rating");
+    const genres = document.getElementById("genres");
+    const moviePoster = document.getElementById("moviePoster");
+    const currentWeather = document.getElementById("currentWeather");
+    const currentTime = document.getElementById("currentTime");
+    console.log('Movie Data:', movieData);
+    if (weatherID >= 200 && weatherID < 300) {
+        movieCard.style.background = "linear-gradient(180deg, rgb(79, 78, 77), rgb(138, 177, 227))";
+    } else if (weatherID >= 300 && weatherID < 400) {
+        movieCard.style.background = "linear-gradient(180deg, rgb(79, 78, 77), rgb(138, 177, 227))";
+    } else if (weatherID >= 500 && weatherID < 600) {
+        movieCard.style.background = "linear-gradient(180deg, rgb(79, 78, 77), rgb(138, 177, 227))";
+    } else if (weatherID >= 600 && weatherID < 700) {
+        movieCard.style.background = "linear-gradient(180deg, rgb(79, 78, 77), rgb(255, 255, 255))";
+    } else if (weatherID >= 700 && weatherID < 800) {
+        movieCard.style.background = "linear-gradient(180deg, rgb(79, 78, 77), rgb(153, 152, 148))";
+    } else if (weatherID >= 801 && weatherID < 900) {
+        movieCard.style.background = "linear-gradient(180deg, rgb(102, 101, 98), rgb(222, 221, 217))";
+    } else if (weatherID == 800) {
+        movieCard.style.background = "linear-gradient(180deg, rgb(63, 162, 255),rgb(255, 174, 0))";
+    }
+    else {
+        movieCard.style.background = "default-background-style";
+    }
+    movieTitle.textContent = `${movieData[4]}`;
+    rating.textContent = `${movieData[5]}⭐`;
+    genres.textContent = `${movieData[6]}`;
+    currentWeather.textContent = `Current Weather: ${movieData[2]}`;
+    console.log(movieData[3][0]);
+    if (movieData[3][0] == 0){
+        currentTime.textContent = `Current Time: ${movieData[3].substr(1)}`
+    }
+    else{
+        currentTime.textContent = `Current Time: ${movieData[3]}`;
+    }
+
+    // moviePoster.src = "{{ url_for('static', filename='moviePosters/') }}" + movieData[7];
+    console.log(moviePoster.src);
 }

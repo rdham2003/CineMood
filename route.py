@@ -63,18 +63,33 @@ def getBestMovies(movieList, genreList):
     print(genreDict)
     
     sortedGenreDict = dict(sorted(genreDict.items(), key=lambda item: item[1], reverse=True))
-    top3Genres = list(sortedGenreDict.keys())[:4]
+    top3Genres = list(sortedGenreDict.keys())[:3]
+    bottom3Genres = list(sortedGenreDict.keys())[::-1][:3]
     print(sortedGenreDict)
     print(top3Genres)
+    print(bottom3Genres)
     
-    genreSets = allPossibleSets(top3Genres)[::-1]
-    print(genreSets)
+    genreTopSets = allPossibleSets(top3Genres)[::-1]
+    print(genreTopSets)
+    genreBottomSets = allPossibleSets(bottom3Genres)[::-1]
+    print(genreBottomSets)
     print('\n')
     
     moviesToRecommend = []
     
+    while (len(moviesToRecommend) < 5):
+        for genre in genreTopSets:
+            for movie in movieList:
+                if (genre in movie[3]) and (movie not in moviesToRecommend):
+                    moviesToRecommend.append(movie)
+                if len(moviesToRecommend) == 5:
+                    break
+            if len(moviesToRecommend) == 5:
+                    break
+        if len(moviesToRecommend) == 5:
+                    break   
     while (len(moviesToRecommend) < 10):
-        for genre in genreSets:
+        for genre in genreBottomSets:
             for movie in movieList:
                 if (genre in movie[3]) and (movie not in moviesToRecommend):
                     moviesToRecommend.append(movie)
@@ -162,13 +177,17 @@ def recommendMovie():
 
     print(modelOutput[randomMovie])
     print("\n")
+    
 
     if state:
+        dataList = [city, state, country, weather_data["weather"][0]["description"], dateTime.strftime("%I:%M %p"), modelOutput[randomMovie][1], modelOutput[randomMovie][2], modelOutput[randomMovie][3], modelOutput[randomMovie][4]]
         print(f'You live in {city}, {state}, {country}, where the current weather is {weather_data["weather"][0]["description"]} and the current time is {dateTime.strftime("%I:%M %p")}. Based on these conditions, I recommend you {modelOutput[randomMovie][1]}. {modelOutput[randomMovie][1]} is a {modelOutput[randomMovie][3]} genre movie and has a {modelOutput[randomMovie][2]} rating.')
+        return render_template("recommend.html", data=dataList); 
     else:
+        dataList = [city, country, weather_data["weather"][0]["description"], dateTime.strftime("%I:%M %p"), modelOutput[randomMovie][1], modelOutput[randomMovie][2], modelOutput[randomMovie][3], modelOutput[randomMovie][4]]
         print(f'You live in {city}, {country}, where the current weather is {weather_data["weather"][0]["description"]} and the current time is {dateTime.strftime("%I:%M %p")}. Based on these conditions, I recommend you {modelOutput[randomMovie][1]}. {modelOutput[randomMovie][1]} is a {modelOutput[randomMovie][3]} genre movie and has a {modelOutput[randomMovie][2]} rating.')
-        
-    return render_template("recommend.html");    
+        return render_template("recommend.html", data=dataList);   
+           
 
 if __name__ == "__main__":
     app.run(debug=True)

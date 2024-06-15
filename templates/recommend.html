@@ -13,6 +13,18 @@
     </header>
     <br>
     <br>
+    <div id="movie_container">
+        <h1>Movie Recommended:</h1> 
+        <hr>
+        <h2 id="movieTitle">Movie</h2>
+        <h2 id="rating">9.9⭐</h2>
+        <h2 id="genres">Crime/Documentary</h2>
+        <img id="moviePoster" src="{{ url_for('static', filename='moviePosters/' + data[7]) }}" height="200px" alt="Movie Poster">
+        <h2 id="currentWeather">Rain</h2>
+        <h3 id="currentTime">4:32 PM</h3>
+    </div>
+    <br>
+    <br>
     <div id="weatherCard">
         <h1 class="weatherCity">City</h1> 
         <hr>
@@ -24,6 +36,9 @@
         <h3 class="windSpeed">Wind Speed: 12mph </h3>
         <h3 class="windDirection">Wind Direction: South</h3>
     </div>
+    <script type="text/javascript">
+        var movieData = {{ data|tojson }};
+    </script>
     <script src="static\js\results.js"></script>
 </body>
 </html>

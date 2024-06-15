@@ -76,3 +76,21 @@ body {
     margin: auto;
     text-align: center;
 }
+
+#movie_container{
+    border: 2px black solid;
+    border-radius: 2em;
+    height: 38em;
+    width: 20em;
+    margin: auto;
+    padding-top: 2em;
+    text-align: center;
+    background-color: #3498db;
+}
+
+#main_container{
+    display: inline-flex;
+    width: 100%;
+    margin: auto;
+
+}

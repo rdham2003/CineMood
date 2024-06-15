@@ -24,3 +24,8 @@ with(open("VIP Files\TMDBmoviesData.csv", "r")) as file:
     print(f'Images not found: {len(badMovies)}')
     print(badMovies)
     
+#Result:
+
+#Images Found: 1000
+#Images not found: 0
+     
