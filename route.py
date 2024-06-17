@@ -8,6 +8,7 @@ import itertools
 import datetime
 import random
 import time
+import sqlite3
 from flask import Flask, request, render_template
 
 movieCount = 20
@@ -61,7 +62,7 @@ def getBestMovies(movieList, genreList):
         for i in keys:
             if i in movie[3]:
                 genreDict[i] += 1
-    print(genreDict)
+    print(genreDict)     
     
     sortedGenreDict = dict(sorted(genreDict.items(), key=lambda item: item[1], reverse=True))
     top3Genres = list(sortedGenreDict.keys())[:3]
@@ -112,8 +113,9 @@ def main():
 
 @app.route('/recommend', methods = ["GET", "POST"])
 def recommendMovie():
-    for i in range(2):
-        time.sleep(1)
+    # randTime = random.randint(1,2)
+    # for i in range(2):
+    #     time.sleep(1)
     city = request.form.get("cityBox")
     state = request.form.get("stateBox")  # State code 
     country = request.form.get("countryBox")  # Country code 
@@ -146,7 +148,6 @@ def recommendMovie():
 
     predictedGenres = modelOutputToGenre(predict, genres)
     print(predictedGenres)
-
 
     with(open("VIP Files\TMDBmoviesData.csv", 'r')) as movieDB:
         movieData = movieDB.readlines()
@@ -192,6 +193,10 @@ def recommendMovie():
 @app.route('/return', methods = ["POST"])
 def goBack():
     return render_template("index.html")
+
+@app.route('/metrics', methods = ["POST"])
+def metrics():
+    return render_template("modelMetrics.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

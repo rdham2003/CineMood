@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "FiraSans";
+    src: url(fonts/FiraSansCondensed-Black.ttf);
+}
+
+body {
+    background-color: gray;
+    font-family: "FiraSans";
+}
+
+header {
+    text-align: center;
+}
+
+#model{
+    text-align: center;
+}
+
+#metrics{
+    text-align: center;
+    list-style: none;
+}
+
+#visualizations{
+    text-align: center;
+    list-style: none;
+}

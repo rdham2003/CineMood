@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherTimeMovie Model Metrics</title>
+    <link rel="stylesheet" href="static/metrics.css">
+</head>
+<body>
+    <header>
+        <h1>Machine Learning Model Metrics</h1>
+    </header>
+    <hr>
+    <div id="model">
+        <h2>Model Overview</h2>
+        <h4>Algorithm: Multi Label Random Forest Classifier</h4>
+        <h4>Decision Tree Example: </h4>
+        <img src="{{ url_for('static', filename='Data Graphs/DecisionTreeExample.png') }}" height="500px" alt="decisiontree">
+
+    </div>
+    <hr>
+    <div id="metrics">
+        <h2>Performance Metrics</h2>
+        <li>
+            <ul>Precision: 0.9832</ul>
+            <ul>Recall: 0.9839</ul>
+            <ul>F1 Score: 0.9833</ul>
+            <ul>Hamming Loss: 0.0104</ul>
+            <ul>Jaccard Score: 0.9675</ul>
+        </li>
+        <br>
+        <h2>What the Performance Metrics mean</h2>
+        <li>
+            <ul>Precision: How many predictioms that were predicted positive were actually positive</ul>
+            <ul><b>(True Pos/True Pos + False Pos) Desired Value: ≈ 1</ul>
+            <br>
+            <ul>Recall: How many positives were identified by the classifier</ul>
+            <ul><b>(True Pos/True Pos + False Neg)</b> Desired Value: ≈ 1</ul>
+            <br>
+            <ul>F1 Score: Average of Precision and Recall.</ul>
+            <ul>Desired Value: ≈ 1</ul>
+            <br>
+            <ul>Hamming Loss: Fraction of incorrect labels to total labels.</ul>
+            <ul><b>(Incorrect Labels/Total Labels)</b> Desired value: ≈ 0</ul>
+            <br>
+            <ul>Jaccord Score: Takes the predicted and true label sets and divies their intersection by their union.</ul>
+            <ul><b>(A = Pred B = True) (A ∩ B/A ∪ B)</b> Desired Value: ≈ 1</ul>
+        </li>
+    </div>
+    <hr>
+    <div id="visualizations">
+        <h2>Visualizations</h2>
+        <h3>For each Confusion Matrix, the values represent as followed:</h3>
+        <br>
+        <h4>|True Negative | False Positive|</h4>
+        <h4>|--------------------------------|</h4>
+        <h4>|False Negative | True Positive|</h4>
+        <br>
+        <h3>Confusion Matrices for each Genre: </h3>
+        <li>
+            <ul>Action:</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/ActionConMap.png') }}" height="500px" alt="actionconmap"></ul>
+            <ul>Adventure:</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/AdventureConMap.png') }}" height="500px" alt="adventureconmap"></ul>
+            <ul>Animation:</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/AnimationConMap.png') }}" height="500px" alt="animationconmap"></ul>
+            <ul>Children:</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/ChildrenConMap.png') }}" height="500px" alt="childrenconmap"></ul>
+            <ul>Comedy:</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/ComedyConMap.png') }}" height="500px" alt="crimeconmap"></ul>
+            <ul>Crime:</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/CrimeConMap.png') }}" height="500px" alt="comedyconmap"></ul>
+            <ul>Documentary:</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/DocumenteryConMap.png') }}" height="500px" alt="documentaryconmap"></ul>
+            <ul>Drama:</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/DramaConMap.png') }}" height="500px" alt="dramaconmap"></ul>
+            <ul>Fantasy</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/FantasyConMap.png') }}" height="500px" alt="fantasyconmap"></ul>
+            <ul>History</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/HistoryConMap.png') }}" height="500px" alt="historyconmap"></ul>
+            <ul>Horror</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/HorrorConMap.png') }}" height="500px" alt="horrorconmap"></ul>
+            <ul>Musical</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/MusicalConMap.png') }}" height="500px" alt="musicalconmap"></ul>
+            <ul>Mystery</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/MysteryConMap.png') }}" height="500px" alt="mysteryconmap"></ul>
+            <ul>Romance</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/RomanceConMap.png') }}" height="500px" alt="romanceconmap"></ul>
+            <ul>Sci-Fi</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/SciFiConMap.png') }}" height="500px" alt="scificonmap"></ul>
+            <ul>Thriller</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/ThrillerConMap.png') }}" height="500px" alt="thrillerconmap"></ul>
+            <ul>War</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/WarConMap.png') }}" height="500px" alt="warconmap"></ul>
+            <ul>Western</ul>
+            <ul><img src="{{ url_for('static', filename='Data Graphs/WesternConMap.png') }}" height="500px" alt="westernconmap"></ul>
+        </li>
+    </div>
+</body>
+</html>

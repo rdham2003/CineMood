@@ -80,7 +80,7 @@ body {
 #movie_container{
     border: 2px black solid;
     border-radius: 2em;
-    height: 38em;
+    height: 40em;
     width: 20em;
     margin: auto;
     padding-top: 2em;
@@ -96,6 +96,23 @@ body {
 
 
 #return {
+    border: 0;
+    border-radius: 1em;
+    font-family: "FiraSans";
+    height: 3em;
+    width: 15em;
+    background-color: rgb(187, 17, 187);
+    font-size: 15px;
+}
+
+#metrics_container{
+    height: 25em;
+    width: 20em;
+    margin: auto;
+    text-align: center;
+}
+
+#metrics{
     border: 0;
     border-radius: 1em;
     font-family: "FiraSans";
