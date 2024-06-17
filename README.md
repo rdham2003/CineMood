@@ -1,4 +1,4 @@
-# WeatherMovieApp
+# CinemMood
 Tools used
 
 Languages: HTML/CSS/JavaScript/Python/SQL
