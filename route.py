@@ -121,13 +121,13 @@ def recommendMovie():
     country = request.form.get("countryBox")  # Country code 
     weatherAPI = '3f465ec287cfeb5fa02a21445f57f65b'
 
-    weather_data = get_weather_by_city_state_country(city, country, weatherAPI)
+    weather_data = get_weather_by_city_state_country(city, country, weatherAPI, state)
     print(weather_data)
     try:
         weather_code = weather_data['weather'][0]['id']
     except KeyError:
         print("Error: Invalid location")
-        exit()
+        return render_template("index.html")
 
     if weather_code  == 762 or weather_code == 771 or weather_code == 781:
         print("Unstable weather conditions. Seek shelter immediately!")
