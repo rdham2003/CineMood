@@ -6,14 +6,37 @@ CineMood is a free web application that utilizes a Machine Learning model to rec
 
 **💡Inspiration💡**
 
+Over the past month, I have been interested in 3 big topics: Machine Learning, AI, and Quant Trading. I wanted my career path to revolve around AI. My first step was to delve into 
+the topic of Machine Learning. I had taken an online course on UDemy about ML and learned about numerous ML Algorithms such as Random Forest Classifier, Linear Regression, and K nearest neighbors. I wanted to create a project to exercise my knowledge. However, I wanted to create something new. Something that requires a dataset that cannot be found on Kaggle. During a discussion with friends, the topic of movies came up and what the best movies to watch during the rain were. That's when it hit me: I wanted to create an application that can easily give that. This app would not only recommend a movie for the rain, but also for any weather and the time of the day. I had already worked with OpenWeatherAPI while teaching myself about API calls and JSON, so it was also easier to gather ideas for this project.
 
 
 **🛠️Tools Used🛠️**
 
-Languages: HTML/CSS/JavaScript/Python/SQL
-Libraries and Frameworks: Numpy/Pandas/MatPlotLib/Seaborn/SciKit-Learn/Flask
-Applied Topics: Machine Learning/APIs/Front-end/Back-end/Database
-Machine Learning Model: Multi-Label Random Forest Classifier
+**Languages**
+* HTML
+* CSS
+* JavaScript
+* Python
+* SQL
+
+
+**Libraries and Frameworks** 
+* Numpy
+* Pandas
+* MatPlotLib
+* Seaborn
+* SciKit-Learn
+* Flask
+
+**Applied Topics** 
+* Machine Learning
+* API
+* Front-end
+* Back-end
+* Full stack
+* Database
+
+**Machine Learning Model**: Multi-Label Random Forest Classifier
 
 **📝Learning📝**
 
