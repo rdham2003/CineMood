@@ -9,15 +9,22 @@
 <body>
     <header>
         <h1>Machine Learning Model Metrics</h1>
+        <form action="/return" method="POST">
+            <button id="return">Go back to model</button>
+        </form>
     </header>
     <hr>
     <div id="model">
         <h2>Model Overview</h2>
         <h4>Name: CinemMood</h4>
         <h4>Algorithm: Multi Label Random Forest Classifier</h4>
-        <h4>Decision Tree Example: </h4>
-        <img src="{{ url_for('static', filename='Data Graphs/DecisionTreeExample.png') }}" height="500px" alt="decisiontree">
-
+        <h4>A random forest classifier for datasets with multiple binary column vectors as the dependant variable.</h4>
+        <h3>Dataset example used to train model:</h3>
+        <img src="{{ url_for('static', filename='Data Graphs/Dataset.png') }}" height="500px" alt="dataset">
+        <h4>Random Forest Classifier: A Machine Learning algorithm that generates multiple decision trees that are all independent to one another. The predictions from each trees
+            are then combined into final metrics such as precision and hamming loss. These final performance metrics help determine the accuracy of the model as a whole.</h4>
+        <h3>Sample Decision Tree:</h3>
+        <img src="{{ url_for('static', filename='Data Graphs/DecisionTreeExample.png') }}" height="500px" alt="dataset">
     </div>
     <hr>
     <div id="metrics">
@@ -96,6 +103,9 @@
             <ul>Western</ul>
             <ul><img src="{{ url_for('static', filename='Data Graphs/WesternConMap.png') }}" height="500px" alt="westernconmap"></ul>
         </li>
+        <form action="/return" method="POST">
+            <button id="return">Go back to model</button>
+        </form>
     </div>
 </body>
 </html>
