@@ -121,3 +121,9 @@ body {
     background-color: rgb(187, 17, 187);
     font-size: 15px;
 }
+
+#invalid {
+    background-color: rgb(223, 45, 45);
+    text-align: center;
+    color: white;
+}

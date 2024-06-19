@@ -11,7 +11,7 @@ import time
 import sqlite3
 from flask import Flask, request, render_template
 
-movieCount = 20
+movieCount = 40
 
 # os.system('cls')
 
@@ -127,11 +127,11 @@ def recommendMovie():
         weather_code = weather_data['weather'][0]['id']
     except KeyError:
         print("Error: Invalid location")
-        return render_template("index.html")
+        return render_template("notvalid.html")
 
     if weather_code  == 762 or weather_code == 771 or weather_code == 781:
         print("Unstable weather conditions. Seek shelter immediately!")
-        exit()
+        return render_template("unstable.html")
 
     current_time = "{:.2f}".format(np.round(((weather_data['dt']+weather_data['timezone']) % 86400) / 3600,2))
     dateTime = datetime.datetime.utcfromtimestamp(weather_data['dt']+weather_data['timezone'])

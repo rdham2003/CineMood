@@ -34,7 +34,7 @@ function weatherInfo(data){
     const cityHumidity = document.querySelector(".humidity");
     const cityWSpeed = document.querySelector(".windSpeed");
     const cityWdir = document.querySelector(".windDirection");
-    cityName.textContent = `Current Weather at: ${name}, ${country}`;
+    cityName.textContent = `Current Weather at: ${movieData[0]}, ${movieData[1]}`;
     cityTemp.textContent = `${Math.round(((temp - 273.15) * (9/5) + 32))}° F`;
     cityWeather.textContent = weather;
     if (weatherID >= 200 && weatherID < 300) {

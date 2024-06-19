@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(document.getElementById("cityBox").textContent);
         console.log(document.getElementById("countryBox").textContent);
         let loadElements = document.getElementsByClassName("load");
-        // if (document.getElementById("cityBox").textContent != "" && document.getElementById("countryBox").textContent != ""){
+        if (document.getElementById("cityBox").value != "" && document.getElementById("countryBox").value != ""){
             document.getElementById("form_container").style.height = "30em";
             for (let i = 0; i < loadElements.length; i++) {
                 loadElements[i].style.visibility = 'visible';
             }
-        // }
+        }
     }
 });
