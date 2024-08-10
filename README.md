@@ -42,3 +42,4 @@ the topic of Machine Learning. I had taken an online course on UDemy about ML an
 
 This project was not only built to help solve a confusion of what to watch based on weather and time conditions, but also to teach me about the vast world of Machine Learning.
 This project helped me relearn many topics of statistics and discrete math and teach me many python libraries like SciKit-Lern, Pandas, and Seaborn. I also was able to learn how Machine Learning algorithms read data and return and output. This project also helped me in solidifying my knowledge in HTML, CSS, Javascript, Python, and SQL as well. 
+
