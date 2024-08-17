@@ -10,6 +10,7 @@ import random
 import time
 import sqlite3
 from flask import Flask, request, render_template
+import subprocess
 
 movieCount = 40
 
@@ -149,7 +150,7 @@ def recommendMovie():
     predictedGenres = modelOutputToGenre(predict, genres)
     print(predictedGenres)
 
-    with(open("VIP Files\TMDBmoviesData.csv", 'r')) as movieDB:
+    with(open("VIP Files/TMDBmoviesData.csv", 'r')) as movieDB:
         movieData = movieDB.readlines()
         movieData = movieData[1:]
         movieDatabase = []

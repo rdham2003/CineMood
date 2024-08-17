@@ -4,7 +4,8 @@
 }
 
 body {
-    background-image: url(movie.jpg);
+    background-image: url(movie2.jpg);
+    /* background: linear-gradient(to bottom, purple, pink 50%, purple); */
     font-family: "FiraSans";
     margin: 0;
 }
