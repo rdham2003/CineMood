@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.model_selection import train_test_split
@@ -24,7 +24,7 @@ print(Y.head())
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=1)
 
-multiLabelRandomForest = MultiOutputClassifier(RandomForestClassifier(n_estimators=1500, max_depth=6, random_state=1))
+multiLabelRandomForest = MultiOutputClassifier(RandomForestClassifier(n_estimators=1200, max_depth=6, random_state=1))
 multiLabelRandomForest.fit(X_train, Y_train)
 
 Y_pred = multiLabelRandomForest.predict(X_test)
@@ -87,12 +87,12 @@ print(f'Jaccard Score: {jaccard}')
 def confusionMatrix(Y, Y_pred, genre):
     conmat = confusion_matrix(Y, Y_pred)
     
-    plt.figure(figsize=(15,8))
-    sns.heatmap(conmat, annot=True, cmap="RdBu")
-    plt.xlabel('Predicted')
-    plt.ylabel('Actual')
-    plt.title(f'Confusion Matrix for {genre}')
-    plt.show()
+    # plt.figure(figsize=(15,8))
+    # sns.heatmap(conmat, annot=True, cmap="RdBu")
+    # plt.xlabel('Predicted')
+    # plt.ylabel('Actual')
+    # plt.title(f'Confusion Matrix for {genre}')
+    # plt.show()
     
 def plot_confusion_matrices(Y_test, Y_pred, genres):
     for i, genre in enumerate(genres):
@@ -104,7 +104,7 @@ genres = ['Action', 'Adventure', 'Animation', 'Children', 'Comedy', 'Crime', 'Do
 Y_test = np.array(Y_test)
 Y_pred = np.array(Y_pred)
 
-plot_confusion_matrices(Y_test, Y_pred, genres)
+# plot_confusion_matrices(Y_test, Y_pred, genres)
 
 
 #For each Confusion Matrix, the values represent as followed:
