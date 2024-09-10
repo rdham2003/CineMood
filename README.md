@@ -1,5 +1,7 @@
 # CinemMood
 
+**Try here**: https://cinemood-x27l.onrender.com
+
 **🎬About CineMood🎬**
 
 CineMood is a free web application that utilizes a Machine Learning model to recommend a movie to the user based on their current location's date and time. This application collects weather information using the OpenWeatherAPI and returns a weather code and time. This code and time is then fed to a Machine Learning model and returns a list of genres. Next, this list is fed into an algorithm, which returns a list of 20 movies that best fit the given genres. Finally, a movie is randomly selected from this list and is recommended to the user. The user can freely swap through this list in case their first pick isn't to their liking.
@@ -43,3 +45,4 @@ the topic of Machine Learning. I had taken an online course on UDemy about ML an
 This project was not only built to help solve a confusion of what to watch based on weather and time conditions, but also to teach me about the vast world of Machine Learning.
 This project helped me relearn many topics of statistics and discrete math and teach me many python libraries like SciKit-Lern, Pandas, and Seaborn. I also was able to learn how Machine Learning algorithms read data and return and output. This project also helped me in solidifying my knowledge in HTML, CSS, Javascript, Python, and SQL as well. 
 
+**Differences between deployment and local prod**
