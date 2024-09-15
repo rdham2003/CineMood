@@ -1,6 +1,7 @@
 # CinemMood
 
 **Try here**: https://cinemood-x27l.onrender.com
+(May take a while to load up)
 
 **🎬About CineMood🎬**
 
@@ -46,3 +47,6 @@ This project was not only built to help solve a confusion of what to watch based
 This project helped me relearn many topics of statistics and discrete math and teach me many python libraries like SciKit-Lern, Pandas, and Seaborn. I also was able to learn how Machine Learning algorithms read data and return and output. This project also helped me in solidifying my knowledge in HTML, CSS, Javascript, Python, and SQL as well. 
 
 **Differences between deployment and local prod**
+
+No Posters in prod (I want to avoid any copyright issues)
+ML Algorithm's parameters were fine-tuned to use less memory in prod
