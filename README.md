@@ -48,5 +48,5 @@ This project helped me relearn many topics of statistics and discrete math and t
 
 **Differences between deployment and local prod**
 
-No Posters in prod (I want to avoid any copyright issues)
+No Posters in prod (I want to avoid any copyright issues) /
 ML Algorithm's parameters were fine-tuned to use less memory in prod
