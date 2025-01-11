@@ -31,6 +31,10 @@ the topic of Machine Learning. I had taken an online course on UDemy about ML an
 * SciKit-Learn
 * Flask
 
+**DevOps**
+* Docker
+* Render
+
 **Applied Topics** 
 * Machine Learning
 * API
