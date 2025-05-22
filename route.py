@@ -3,14 +3,12 @@ import numpy as np
 import pickle
 import warnings
 import pandas as pd
-import os
 import itertools
 import datetime
 import random
-import time
-import sqlite3
+
 from flask import Flask, request, render_template
-import subprocess
+
 
 movieCount = 40
 
@@ -76,10 +74,8 @@ def getBestMovies(movieList, genreList):
     print(genreTopSets)
     genreBottomSets = allPossibleSets(bottom3Genres)[::-1]
     print(genreBottomSets)
-    print('\n')
     
     moviesToRecommend = []
-    
     while (len(moviesToRecommend) < movieCount/2):
         for genre in genreTopSets:
             for movie in movieList:
@@ -174,7 +170,7 @@ def recommendMovie():
                 recommendedMovies.append(movie)
 
     # print(recommendedMovies)
-
+    print("Timing our here?")
     modelOutput = getBestMovies(recommendedMovies, predictedGenres)
     randomMovie = random.randint(0,9)
 
@@ -200,4 +196,4 @@ def metrics():
     return render_template("modelMetrics.html")
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=80)
