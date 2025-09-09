@@ -1,7 +1,6 @@
 # CinemMood
 
-**Try here**: https://cinemood-x27l.onrender.com
-(May take a while to load up)
+**Live Demo URL**: [https://cinemood-x27l.onrender.com](https://cinemood.online/)
 
 **🎬About CineMood🎬**
 
